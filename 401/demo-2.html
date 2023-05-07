@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+        }
+        img {
+            width: 500px;
+            height: 300px;
+            float: left;
+        }
+        button {
+            position: relative;
+            /* background: blue; */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./屏幕截图 2023-01-29 124937.png">
+    </div>
+    <div>
+        <button>点击更换图片</button>
+    </div>
+    <script>
+        const btn = document.querySelector("button")
+        const img = document.querySelector("img")
+        btn.addEventListener('click', function(){
+            img.src = "./屏幕截图 2023-03-13 151049.png"
+        })
+    </script>
+</body>
+</html>
