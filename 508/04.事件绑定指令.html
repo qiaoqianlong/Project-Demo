@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <h3>Kinno的年纪是: {{age}}</h3>
+       <button @click="addCount">增长一岁</button>
+       <button @click="subCount">减少一岁</button>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                age: 23
+            },
+            methods: {
+                addCount(e) {
+                    const nowBtnColor = e.target.style.backgroundColor
+                    e.target.style.backgroundColor = nowBtnColor === 'gray' ? '' : 'gray'
+                    this.age += 1
+                },
+                subCount(e) {
+                    const nowBtnColor = e.target.style.backgroundColor
+                    e.target.style.backgroundColor = nowBtnColor === 'blue' ? '' : 'blue'
+                    this.age -= 1
+                }
+            }
+        })
+    </script>
+</body>
+</html>
