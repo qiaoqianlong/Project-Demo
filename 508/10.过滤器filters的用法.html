@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message | Cap}}</p>
+    </div>
+
+    <div id="info">
+        <p>{{info | capitalize}}</p>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        Vue.filter('Cap', (str) => {
+          return str.charAt(0).toUpperCase() + str.slice(1) + '~~~'
+        })
+    </script>
+
+    <script>
+        const vm1 = new Vue({
+            el: '#app',
+            data: {
+                message: 'the witcher 3',
+                info: 'the best rpg game!'
+            },
+            filters: {
+                capitalize(str) {
+                    return str.charAt(0).toUpperCase() + str.slice(1)
+                }
+            }
+        })
+    </script>
+
+    <script>
+                const vm2 = new Vue({
+            el: '#info',
+            data: {
+                message: 'the witcher 3',
+                info: 'the best rpg game!'
+            },
+            filters: {
+                capitalize(str) {
+                    return str.charAt(0).toUpperCase() + str.slice(1)
+                }
+            }
+        })
+    </script>
+
+
+
+</body>
+</html>

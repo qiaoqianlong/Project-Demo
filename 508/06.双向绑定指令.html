@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>用户名是：{{username}}</p>
+        <input type="text" name="" id="" v-model="username">
+
+        <hr>
+
+        <p>选中的省份是：{{province}}</p>
+        <select name="" id="" v-model="province">
+            <option value="">请选择</option>
+            <option value="1">河南</option>
+            <option value="2">山东</option>
+            <option value="3">山西</option>
+        </select>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: 'KINNO',
+                province: '2'
+            },
+            methods: {
+                submit(e){
+                    console.log('按下了 enter 键，最新的值是：' + e.target.value)
+                },
+                clearInput(e){
+                    e.target.value = ''
+                    console.log('已经清空')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

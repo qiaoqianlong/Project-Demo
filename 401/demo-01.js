@@ -1,0 +1,5 @@
+const date = new Date()
+const date1 = new Date('2008-8-8')
+console.log(date)
+console.log(date.getTime())
+console.log(date1)
